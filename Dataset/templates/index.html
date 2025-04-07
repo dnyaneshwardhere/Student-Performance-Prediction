@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Performance Predictor</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 10px 0 5px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #28a745;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      padding: 12px;
+      font-size: 1rem;
+      margin-top: 10px;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    /* Make it responsive on smaller devices */
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Enter Student Details</h2>
+    <form action="/predict" method="POST">
+      <label for="name">Name:</label>
+      <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        required 
+        placeholder="Enter your full name"
+      />
+
+      <label for="prn">PRN Number:</label>
+      <input 
+        type="text" 
+        id="prn" 
+        name="prn" 
+        required 
+        placeholder="Enter your PRN"
+      />
+
+      <label for="study_hours">Study Hours:</label>
+      <input 
+        type="number" 
+        id="study_hours" 
+        name="study_hours" 
+        step="0.1" 
+        required 
+        placeholder="e.g., 3.5"
+      />
+
+      <label for="attendance">Attendance (%):</label>
+      <input 
+        type="number" 
+        id="attendance" 
+        name="attendance" 
+        step="0.1" 
+        required 
+        placeholder="e.g., 85.5"
+      />
+
+      <label for="assignment_scores">Assignment Scores:</label>
+      <input 
+        type="number" 
+        id="assignment_scores" 
+        name="assignment_scores" 
+        step="0.1" 
+        required 
+        placeholder="e.g., 92.5"
+      />
+
+      <label for="last_sem_percentage">Last Semester Percentage:</label>
+      <input 
+        type="number" 
+        id="last_sem_percentage" 
+        name="last_sem_percentage" 
+        step="0.1" 
+        required 
+        placeholder="e.g., 78.2"
+      />
+
+      <label for="mobile_screen_time">Mobile Screen Time (hrs):</label>
+      <input 
+        type="number" 
+        id="mobile_screen_time" 
+        name="mobile_screen_time" 
+        step="0.1" 
+        required 
+        placeholder="e.g., 4.0"
+      />
+
+      <label for="sleep_hours">Sleep Hours:</label>
+      <input 
+        type="number" 
+        id="sleep_hours" 
+        name="sleep_hours" 
+        step="0.1" 
+        required 
+        placeholder="e.g., 7.0"
+      />
+
+      <button type="submit">Predict</button>
+    </form>
+  </div>
+</body>
+</html>
